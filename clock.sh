@@ -2,4 +2,4 @@
 
 filename="timecard.log"
 
-echo "[$(date -u)] --- ${1}" >> "${filename}"
+echo "[$(TZ=America/Chicago date)] --- ${1}" >> "${filename}"
