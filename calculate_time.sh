@@ -16,4 +16,8 @@ calculate_total() {
     echo "Total Time: $(convertsecs total)"
 }
 
-calculate_total $1 $2
+if [ "$#" -eq 1 ]; then
+    calculate_total $1 $(TZ=America/Chicago date | grep -o '[0-2][0-9]:[0-5][0-9]')
+else
+    calculate_total $1 $2
+fi
